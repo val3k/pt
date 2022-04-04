@@ -1,0 +1,18 @@
+  
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_GID: 1000
+        USER_UID: 1000
+        USERNAME: dev
+    ports: 
+      - "8501:8501"
+    volumes:
+      - .:/pt
+    tty:
+      true
